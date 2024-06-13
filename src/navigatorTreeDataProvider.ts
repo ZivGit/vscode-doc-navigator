@@ -40,7 +40,7 @@ export class NavigatorTreeDataProvider implements vscode.TreeDataProvider<Depend
 				vscode.TreeItemCollapsibleState.None,
 				{
 					command: 'docNavigator.eventName.itemClicked',
-					title: 'Item Clicked',
+					title: 'DocNavigator: Item Clicked',
 					arguments: [item.uri]
 				}
 			);
