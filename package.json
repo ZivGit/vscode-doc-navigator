@@ -1,0 +1,105 @@
+{
+  "name": "doc-navigator",
+  "displayName": "DocNavigator",
+  "description": "Your Gateway to DocNavigator Development Excellence",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [
+    "onView:docNavigator"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "docNavigator.sidebar.toggleDisplay.viewsWelcome",
+        "title": "DocNavigator: Views Welcome"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "docNavigator",
+          "title": "DocNavigator",
+          "icon": "media/icons/svg/hat_icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "docNavigator": [
+        {
+          "id": "docNavigator.sidebar.tree.viewsWelcome",
+          "name": "Welcome",
+          "type": "tree",
+          "when": "docNavigator.viewType == 'viewsWelcome' || !docNavigator.viewType"
+        },
+        {
+          "id": "docNavigator.sidebar.tree.docNavigator",
+          "name": "Camera List",
+          "type": "tree",
+          "when": "docNavigator.viewType == 'docNavigator'"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "docNavigator.sidebar.tree.viewsWelcome",
+        "contents": "DocNavigator\nJavaScript, TypeScript, React, Vue\n[我是前端开发者](command:docNavigator.sidebar.toggleDisplay.docNavigator)\nJava, Golang, Nodejs\n[我是后端开发者](command:docNavigator.sidebar.toggleDisplay.docNavigator)"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "docNavigator",
+        "title": "Get Started DocNavigator",
+        "description": "Simmir Video Analysis Platform - Post-processing logic",
+        "icon": "media/icons/svg/hat_icon.svg",
+        "steps": [
+          {
+            "id": "runcommand",
+            "title": "Run Command",
+            "description": "This step will run a command and check off once it has been run.\n[Run Command](command:getting-started-sample.runCommand)",
+            "media": {
+              "image": "media/icons/svg/hat_icon.svg",
+              "altText": "Empty image"
+            },
+            "completionEvents": [
+              "onCommand:getting-started-sample.runCommand"
+            ]
+          },
+          {
+            "id": "changesetting",
+            "title": "Change Setting",
+            "description": "This step will change a setting and check off when the setting has changed\n[Change Setting](command:getting-started-sample.changeSetting)",
+            "media": {
+              "markdown": "media/readme.md"
+            },
+            "completionEvents": [
+              "onSettingChanged:getting-started-sample.sampleSetting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "install": "npm install",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  }
+}

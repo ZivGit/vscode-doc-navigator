@@ -1,0 +1,22 @@
+[
+    {
+        "label": "React",
+        "children": [
+            {
+                "label": "version",
+                "description": "18.3.1",
+                "uri": "https://react.dev/"
+            }
+        ]
+    },
+    {
+        "label": "Vue",
+        "children": [
+            {
+                "label": "version",
+                "description": "18.3.1",
+                "uri": "https://vuejs.org/"
+            }
+        ]
+    }
+]
