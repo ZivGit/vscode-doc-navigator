@@ -4,9 +4,6 @@ node_modules/
 # 忽略构建输出目录
 out/
 
-# 忽略本地的.vscode目录
-.vscode/
-
 # 忽略macOS系统文件
 .DS_Store
 
