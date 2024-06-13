@@ -1,5 +1,5 @@
 import { type ExtensionContext, window, commands, ViewColumn, Uri } from 'vscode';
-import { NavigatorTreeDataProvider } from './docNavigatorTreeDataProvider';
+import { NavigatorTreeDataProvider } from './navigatorTreeDataProvider';
 import treeData from './treeData.json';
 
 export function activate(context: ExtensionContext) {
