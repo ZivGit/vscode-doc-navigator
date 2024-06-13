@@ -1,5 +1,5 @@
 import { type ExtensionContext, window, commands, ViewColumn, Uri } from 'vscode';
-import { DocNavigatorTreeDataProvider } from './docNavigatorTreeDataProvider';
+import { NavigatorTreeDataProvider } from './docNavigatorTreeDataProvider';
 import treeData from './treeData.json';
 
 export function activate(context: ExtensionContext) {
@@ -9,14 +9,14 @@ export function activate(context: ExtensionContext) {
   /**
    * Register Provider
    */
-  const docNavigatorTreeDataProvider = new DocNavigatorTreeDataProvider(treeData);
-  const docNavigatorTreeDataRegister = window.registerTreeDataProvider(docNavigatorTreeDataProvider.viewType, docNavigatorTreeDataProvider);
+  const navigatorTreeDataProvider = new NavigatorTreeDataProvider(treeData);
+  const navigatorTreeDataRegister = window.registerTreeDataProvider(navigatorTreeDataProvider.viewType, navigatorTreeDataProvider);
 
   /**
    * Register Commands
    */
-  const displayViewsWelcomeCommand = commands.registerCommand('docNavigator.sidebar.toggleDisplay.viewsWelcome', () => commands.executeCommand('setContext', 'docNavigator.viewType', 'viewsWelcome'));
-  const displayDocNavigatorCommand = commands.registerCommand('docNavigator.sidebar.toggleDisplay.docNavigator', () => commands.executeCommand('setContext', 'docNavigator.viewType', 'docNavigator'));
+  const displayViewsWelcomeCommand = commands.registerCommand('docNavigator.toggleDisplay.viewsWelcome', () => commands.executeCommand('setContext', 'docNavigator.viewType', 'viewsWelcome'));
+  const displayNavigatorCommand = commands.registerCommand('docNavigator.toggleDisplay.navigator', () => commands.executeCommand('setContext', 'docNavigator.viewType', 'navigator'));
   const eventNameItemClickedCommand = commands.registerCommand('docNavigator.eventName.itemClicked', (uri: string) => {
     commands.executeCommand(
       'simpleBrowser.api.open',
@@ -27,8 +27,8 @@ export function activate(context: ExtensionContext) {
 
   context.subscriptions.push(
     displayViewsWelcomeCommand,
-    displayDocNavigatorCommand,
+    displayNavigatorCommand,
     eventNameItemClickedCommand,
-    docNavigatorTreeDataRegister
+    navigatorTreeDataRegister
   );
 }

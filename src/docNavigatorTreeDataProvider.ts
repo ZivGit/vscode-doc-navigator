@@ -9,14 +9,14 @@ type TreeDataType = {
 };
 
 /**
- * DocNavigator
+ * Navigator
  *
  * @export
- * @class DocNavigatorTreeDataProvider
+ * @class NavigatorTreeDataProvider
  * @implements {vscode.TreeDataProvider<Dependency>}
  */
-export class DocNavigatorTreeDataProvider implements vscode.TreeDataProvider<Dependency> {
-	public readonly viewType = "docNavigator.sidebar.tree.docNavigator";
+export class NavigatorTreeDataProvider implements vscode.TreeDataProvider<Dependency> {
+	public readonly viewType = "docNavigator.view.navigator";
 
 	private _onDidChangeTreeData: vscode.EventEmitter<Dependency | undefined | null | void> = new vscode.EventEmitter<Dependency | undefined | null | void>();
 	readonly onDidChangeTreeData: vscode.Event<Dependency | undefined | null | void> = this._onDidChangeTreeData.event;

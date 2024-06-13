@@ -13,7 +13,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "docNavigator.sidebar.toggleDisplay.viewsWelcome",
+        "command": "docNavigator.toggleDisplay.viewsWelcome",
         "title": "DocNavigator: Views Welcome"
       }
     ],
@@ -29,23 +29,23 @@
     "views": {
       "docNavigator": [
         {
-          "id": "docNavigator.sidebar.tree.viewsWelcome",
+          "id": "docNavigator.view.viewsWelcome",
           "name": "Welcome",
           "type": "tree",
           "when": "docNavigator.viewType == 'viewsWelcome' || !docNavigator.viewType"
         },
         {
-          "id": "docNavigator.sidebar.tree.docNavigator",
-          "name": "Camera List",
+          "id": "docNavigator.view.navigator",
+          "name": "Navigator",
           "type": "tree",
-          "when": "docNavigator.viewType == 'docNavigator'"
+          "when": "docNavigator.viewType == 'navigator'"
         }
       ]
     },
     "viewsWelcome": [
       {
-        "view": "docNavigator.sidebar.tree.viewsWelcome",
-        "contents": "DocNavigator\nJavaScript, TypeScript, React, Vue\n[我是前端开发者](command:docNavigator.sidebar.toggleDisplay.docNavigator)\nJava, Golang, Nodejs\n[我是后端开发者](command:docNavigator.sidebar.toggleDisplay.docNavigator)"
+        "view": "docNavigator.view.viewsWelcome",
+        "contents": "DocNavigator\nJavaScript, TypeScript, React, Vue\n[我是前端开发者](command:docNavigator.toggleDisplay.navigator)\nJava, Golang, Nodejs\n[我是后端开发者](command:docNavigator.toggleDisplay.navigator)"
       }
     ],
     "walkthroughs": [
